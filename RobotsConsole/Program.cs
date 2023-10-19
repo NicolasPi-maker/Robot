@@ -1,5 +1,6 @@
 ﻿using Robot;
 
-Robots robot = new("Robot bot", 10, 10);
+RobotMobile robot = new("Robot bot", 10, 10, 1);
 
-robot.ShowPosition();
+Console.WriteLine(robot.start());
+Console.WriteLine(robot.clean());
