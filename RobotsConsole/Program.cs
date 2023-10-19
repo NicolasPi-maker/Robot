@@ -1,7 +1,7 @@
 ﻿using Robot;
 using System.Drawing;
 
-RobotMobile robot = new("Robot bot", 10, 10, 1,new RobotPoint(10,10));
+RobotMobile robot = new("Robot bot",new RobotPoint(10,10), 10);
 
 Console.WriteLine(robot.start());
 Console.WriteLine(robot.clean());
