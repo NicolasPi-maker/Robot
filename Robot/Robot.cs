@@ -1,32 +1,32 @@
-﻿namespace Robot
+﻿using System.Drawing;
+
+namespace Robot
 {
     public class Robots : RobotAbstrait
     {
         #region attributs
         protected string _name;
-        protected int _positionX;
-        protected int _positionY;
+        protected RobotPoint _position;
         #endregion
 
         #region constructor
-        public Robots(string name, int positionX, int positionY)
+        public Robots(string name, RobotPoint point)
         {
             _name = name;
-            _positionX = positionX;
-            _positionY = positionY;
+            _position = point;
         }
         #endregion
 
         #region Methods
         public void Go(int directionX, int directionY)
         {
-            _positionX += directionX;
-            _positionY += directionY;
+            _position._x += directionX;
+            _position._y += directionY;
         }
 
         public virtual string ShowPosition()
         {
-            return _positionX + " " + _positionY;
+            return _position._x + " " + _position._y;
         }
 
         public override string start()
@@ -42,26 +42,6 @@
         public string SetName(string newName)
         {
             return _name = newName;
-        }
-
-        public int GetPositionX()
-        {
-            return _positionX;
-        }
-
-        public int SetPositionX(int newPositionX)
-        {
-            return _positionX = newPositionX;
-        }
-
-        public int GetPositionY()
-        {
-            return _positionY;
-        }
-
-        public int SetPositionY(int newPositionY)
-        {
-            return _positionY = newPositionY;
         }
         #endregion
     }

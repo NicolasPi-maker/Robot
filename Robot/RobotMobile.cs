@@ -11,13 +11,10 @@ namespace Robot
     public class RobotMobile : Robots, IRobotNettoyage
     {
         private int _speed;
-        private RobotPoint _position;
 
-        public RobotMobile(string name, int positionX, int positionY, int speed, RobotPoint position) : base(name, positionX, positionY)
+        public RobotMobile(string name, RobotPoint position, int speed) : base(name, position)
         {
             _speed = speed;
-            _position = position;
- 
         }
 
         public int TravelTime(int newPositionX, int newPositionY)
