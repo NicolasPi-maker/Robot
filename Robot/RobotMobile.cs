@@ -38,5 +38,10 @@ namespace Robot
             int distance = Utils.CalculateDistance(_position, newPosition);
             return Math.Abs(distance);
         }
+
+        public int getSpeed()
+        {
+            return _speed; 
+        }
     }
 }
