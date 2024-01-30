@@ -52,6 +52,11 @@ var robotList =  new List<RobotDate>()
     new RobotDate(2,"Robot 2","Marche"),
 };
 
+foreach (RobotDate robotDate in robotList)
+{
+    Console.WriteLine(robotDate._name);
+}
+
 var robotDictionary = new Dictionary<int, RobotDate>()
 {
     {
@@ -62,19 +67,58 @@ var robotDictionary = new Dictionary<int, RobotDate>()
     }
 };
 
+foreach (var (key, value) in robotDictionary)
+{
+    Console.WriteLine(value._name);
+}
+
 var robotQueue = new Queue<RobotDate>();
 robotQueue.Enqueue(new RobotDate(5, "Robot 5", "Arrêt"));
 robotQueue.Enqueue(new RobotDate(6, "Robot 6", "Pause"));
+
+foreach (RobotDate robotDate in robotQueue)
+{
+    Console.WriteLine(robotDate._name);
+}
 
 var robotLinkedList = new LinkedList<RobotDate>();
 robotLinkedList.AddLast(new RobotDate(7, "Robot 7", "Pause"));
 robotLinkedList.AddLast(new RobotDate(8, "Robot 8", "Pause"));
 
+foreach (RobotDate robotDate in robotLinkedList)
+{
+    Console.WriteLine(robotDate._name);
+}
+
 var robotStack = new Stack<RobotDate>();
 robotStack.Push(new RobotDate(9, "Robot 9", "Marche"));
 robotStack.Push(new RobotDate(10, "Robot 10", "Arrêt"));
 
+foreach (RobotDate robotDate in robotStack)
+{
+    Console.WriteLine(robotDate._name);
+}
+
 var robotObservableCollection = new ObservableCollection<RobotDate>();
+robotObservableCollection.Add(new RobotDate(11, "Robot 11", "Marche"));
+robotObservableCollection.Add(new RobotDate(12, "Robot 12", "Marche"));
+
+foreach (RobotDate robotDate in robotObservableCollection)
+{
+    Console.WriteLine(robotDate._name);
+}
+
+var robotSortedList = new SortedList<int, RobotDate>();
+robotSortedList.Add(0, new RobotDate(13, "Robot 13", "Marche"));
+robotSortedList.Add(1, new RobotDate(14, "Robot 14", "Arrêt"));
+
+foreach (var (key, value) in robotSortedList)
+{
+    Console.WriteLine(value._name);
+}
+
+
+// Il manque le point 5 et 6 de la slide 109 du powerpoint //
 
 var robotLinqList = new List<RobotLinq>();
 for (int i = 0; i < 10; i++)
@@ -101,8 +145,6 @@ int oldestRobot = robotLinqList.Max(element => element.Year);
 Console.WriteLine(oldestRobot);
 
 
-// Il manque le point 5 et 6 de la slide 109 du powerpoint //
-
 var groupByYear = robotLinqList.GroupBy(element => element.Year);
 Console.WriteLine("////////");
 foreach (var group in groupByYear)
@@ -124,7 +166,6 @@ foreach (var robotNamedWithO in oInNameandAfter2005)
 {
     Console.WriteLine(robotNamedWithO.Name);
 }
-
 
 Console.WriteLine("////////");
 var constructYearAverage = robotLinqList.Average(element => element.Year);

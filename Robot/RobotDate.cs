@@ -5,10 +5,10 @@ namespace Robot
     public class RobotDate
     {
         #region attributs
-        protected int _id;
-        protected string _name;
-        protected string _state;
-        protected DateTime _creationDate = DateTime.Now;
+        public int _id;
+        public string _name;
+        public string _state;
+        public DateTime _creationDate = DateTime.Now;
         #endregion
 
         #region constructor
